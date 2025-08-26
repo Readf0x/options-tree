@@ -29,6 +29,7 @@ rec {
               packages = with pkgs; [
                 go
                 delve
+                htmlq
               ];
             };
             packages = {

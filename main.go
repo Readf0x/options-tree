@@ -81,9 +81,9 @@ func (n node) print_tree(indent int) {
 	}
 	i := strings.Repeat(" ", indent*2)
 	if html && len(n.children) == 0 {
-		fmt.Printf("%s<li><a href=\"options.html%s\">%s</a></li>\n", i, n.fq, n.label)
+		fmt.Printf("%s<li><a href=\"%s\">%s</a></li>\n", i, n.fq, n.label)
 	} else if html && len(n.children) > 0 {
-		fmt.Printf("%s<details><summary><a href=\"options.html%s\">%s</a></summary>\n", i, n.fq, n.label)
+		fmt.Printf("%s<details><summary><a href=\"%s\">%s</a></summary>\n", i, n.fq, n.label)
 	} else {
 		fmt.Println(strings.Repeat(" ", indent*2) + n.label)
 	}

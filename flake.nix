@@ -4,6 +4,10 @@ rec {
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    templating-engine = {
+      url = "github:readf0x/templating-engine";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -30,6 +34,7 @@ rec {
                 go
                 delve
                 htmlq
+                inputs.templating-engine.packages.${system}.default
               ];
             };
             packages = {

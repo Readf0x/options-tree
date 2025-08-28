@@ -10,8 +10,24 @@
  <meta name="generator" content="nixos-render-docs" />
  <link rel="home" href="index.xhtml" title="nvf manual" />
  <link rel="up" href="index.xhtml" title="nvf manual" /><link rel="prev" href="quirks.html" title="Appendix A. Known Issues and Quirks" /><link rel="next" href="release-notes.html" title="Appendix C. Release Notes" />
+ <script>
+	iter = node => {
+		if (node.nodeName == "A") {
+			if (document.getElementById(node.getAttribute("href").slice(1)) == null) {
+				node.removeAttribute("href")
+			}
+		}
+		node.childNodes.forEach(iter)
+	}
+	callmewhenyougetlost = () => iter(document.querySelector("ul"))
+ </script>
+ <style>
+	ul a:not([href]) {
+		color: inherit;
+	}
+ </style>
  </head>
- <body>
+ <body onload="callmewhenyougetlost()">
   <div class="navheader">
    <table width="100%" summary="Navigation header">
     <tr>
